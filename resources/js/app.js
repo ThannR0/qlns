@@ -16,7 +16,7 @@ createInertiaApp({
   setup({ el, app, props }) {
     new Vue({
       metaInfo: {
-        titleTemplate: title => (title ? `${title} - KTT` : 'KTT'),
+        titleTemplate: title => (title ? `${title} - TT` : 'TT'),
       },
       render: h => h(app, props),
     }).$mount(el)
