@@ -646,6 +646,3 @@ Route::get('bangchamcong', [BangChamCongController::class, 'index'])
     ->name('bangchamcong')
     ->middleware('auth');
 
-Route::post('bangchamcong', [BangChamCongController::class, 'store'])
-    ->name('bangchamcong.store')
-    ->middleware('auth');

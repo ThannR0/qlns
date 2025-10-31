@@ -32,11 +32,11 @@ class NhanVienController extends Controller
                 ->filter(Request::only('search', 'trashed', 'gioitinh', 'trangthai'))
                 ->paginate(10)
                 ->withQueryString()
-                ->through(fn ($nhanvien) => [
+                ->through(fn($nhanvien) => [
                     'id' => $nhanvien->id,
                     'manv' => 'NV' . str_pad($nhanvien->id, 3, '0', STR_PAD_LEFT),
                     'hovaten' => $nhanvien->hovaten,
-                    'email' => $nhanvien->user->email??"",
+                    'email' => $nhanvien->user->email ?? "",
                     'sdt' => $nhanvien->sdt,
                     'gioitinh' => $nhanvien->gioitinh,
                     'trangthai' => $nhanvien->trangthai,
@@ -121,7 +121,9 @@ class NhanVienController extends Controller
                 'trangthai' => Request::get('trangthai'),
                 'bacluong' => Request::get('bacluong'),
                 'hesoluong' => Request::get('hesoluong'),
-                'photo_path' => Request::file('photo') ? Request::file('photo')->store('nhanvien') : null,
+                'photo_path' => Request::file('photo') ? Request::file('photo')->store('nhanvien', 'public') : null,
+
+                // 'photo_path' => Request::file('photo') ? Request::file('photo')->store('nhanvien') : null,
             ])->id,
             'email' => Request::get('email'),
             'password' => Request::get('password'),
@@ -182,7 +184,7 @@ class NhanVienController extends Controller
                 'photo' => $nhanvien->photo_path ? URL::route('image', ['path' => $nhanvien->photo_path, 'w' => 60, 'h' => 60, 'fit' => 'crop']) : null,
                 'deleted_at' => $nhanvien->deleted_at,
             ],
-            'baohiem' => (new BaoHiem())->where('nhanvien_id', $nhanvien->id)->get()->transform(fn ($baohiem) => [
+            'baohiem' => (new BaoHiem())->where('nhanvien_id', $nhanvien->id)->get()->transform(fn($baohiem) => [
                 'id' => $baohiem->id,
                 'maso' => $baohiem->maso,
                 'tenbh' => $baohiem->loaibaohiem->tenbh,
@@ -190,7 +192,7 @@ class NhanVienController extends Controller
                 'ngayhethan' => $baohiem->ngayhethan,
                 'mucdong' => $baohiem->mucdong
             ]),
-            'hopdong' => (new HopDong())->where('nhanvien_id', $nhanvien->id)->get()->transform(fn ($hopdong) => [
+            'hopdong' => (new HopDong())->where('nhanvien_id', $nhanvien->id)->get()->transform(fn($hopdong) => [
                 'id' => $hopdong->id,
                 'mahd' => 'HD' . str_pad($hopdong->id, 3, '0', STR_PAD_LEFT),
                 'ngaybd' => $hopdong->ngaybd,
@@ -241,9 +243,16 @@ class NhanVienController extends Controller
             'hesoluong' => Request::get('hesoluong')
         ]);
 
+
         if (Request::file('photo')) {
-            $nhanvien->update(['photo_path' => Request::file('photo')->store('users')]);
+            $nhanvien->update([
+                'photo_path' => Request::file('photo')->store('nhanvien', 'public'),
+            ]);
         }
+
+        // if (Request::file('photo')) {
+        //     $nhanvien->update(['photo_path' => Request::file('photo')->store('users')]);
+        // }
 
         return Redirect::back()->with('success', 'Đã cập nhật thành công.');
     }

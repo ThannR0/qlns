@@ -11,7 +11,7 @@
         </select>
       </search-filter>
       <inertia-link v-if="filters.nhanvien" class="btn-indigo" :href="route('chamcong.create', filters.nhanvien)">
-        <span>Tạo Mới (Demo)</span>
+        <span>Chấm Công</span>
       </inertia-link>
     </div>
     <div class="bg-white rounded shadow overflow-x-auto">
