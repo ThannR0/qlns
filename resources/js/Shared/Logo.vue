@@ -9,29 +9,34 @@
     class="logo-t"
   >
     <defs>
+      <!-- Gradient -->
       <linearGradient id="g1" x1="0%" x2="100%" y1="0%" y2="100%">
         <stop :offset="gradStops[0].offset" :stop-color="gradStops[0].color" />
         <stop :offset="gradStops[1].offset" :stop-color="gradStops[1].color" />
       </linearGradient>
 
+      <!-- Shadow -->
       <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-        <feDropShadow dx="0" dy="6" stdDeviation="8" flood-opacity="0.25"/>
+        <feDropShadow dx="0" dy="6" stdDeviation="8" flood-opacity="0.25" />
       </filter>
 
+      <!-- Mask notch -->
       <mask id="cut">
-        <!-- mask to make the T have a negative-space notch -->
-        <rect x="0" y="0" width="200" height="200" fill="white"/>
-        <rect :x="90" :y="70" :width="20" :height="60" fill="black"/>
+        <rect x="0" y="0" width="200" height="200" fill="white" />
+        <rect x="90" y="70" width="20" height="60" fill="black" />
       </mask>
     </defs>
 
-    <!-- background circle softly behind the letter -->
+    <!-- Background circle -->
     <circle cx="100" cy="100" r="80" :fill="bgColor" opacity="0.08" />
 
-    <!-- stylized T -->
-    <g :filter="useShadow ? 'url(#shadow)' : null" transform="translate(0,0)">
+    <!-- Stylized centered T -->
+    <g
+      :filter="useShadow ? 'url(#shadow)' : null"
+      transform="translate(0,0)"
+    >
       <path
-        d="M35 50 H165 a8 8 0 0 1 8 8 v12 a8 8 0 0 1 -8 8 H116 v62 a12 12 0 0 1 -12 12 h-8 a12 12 0 0 1 -12 -12 V88 H35 a8 8 0 0 1 -8 -8 V58 a8 8 0 0 1 8 -8 z"
+        d="M40 55 H160 a8 8 0 0 1 8 8 v12 a8 8 0 0 1 -8 8 H115 v60 a12 12 0 0 1 -12 12 h-6 a12 12 0 0 1 -12 -12 V83 H40 a8 8 0 0 1 -8 -8 V63 a8 8 0 0 1 8 -8 z"
         :fill="useGradient ? 'url(#g1)' : primaryColor"
         :stroke="strokeColor"
         :stroke-width="strokeWidth"
@@ -39,9 +44,9 @@
         class="t-shape"
       />
 
-      <!-- thin accent line to add depth -->
+      <!-- Accent line -->
       <path
-        d="M40 62 H160"
+        d="M45 67 H155"
         :stroke="accentColor"
         stroke-width="4"
         stroke-linecap="round"
@@ -50,7 +55,7 @@
       />
     </g>
 
-    <!-- optional shine animation overlay -->
+    <!-- Shimmer animation -->
     <rect
       v-if="shimmer"
       x="-60"
@@ -69,7 +74,7 @@ import { computed } from 'vue'
 
 const props = defineProps({
   size: { type: [Number, String], default: 160 },
-  primaryColor: { type: String, default: '#0077B6' }, // teal-ish
+  primaryColor: { type: String, default: '#0077B6' },
   secondaryColor: { type: String, default: '#00B4D8' },
   accentColor: { type: String, default: '#ffffff' },
   strokeColor: { type: String, default: 'rgba(0,0,0,0.06)' },
@@ -110,7 +115,6 @@ const gradStops = computed(() => [
 .accent {
   mix-blend-mode: overlay;
 }
-/* shimmer animation */
 .shimmer {
   animation: slide 1.6s linear infinite;
 }

@@ -1,13 +1,13 @@
 <template>
   <div>
-    <h1 class="mb-8 font-bold text-3xl">Bảng Chấm Công</h1>
+    <h1 class="mb-8 font-bold text-3xl">Bảng Nhân Viên Đã Chấm Công</h1>
     <form @submit.prevent="update">
     <div class="mb-6 flex justify-between items-center">
       <search-filter v-model="form.search" class="w-full max-w-md mr-4" @reset="reset">
         <label class="block text-gray-700">Ngày công:</label>
         <input @change="change" v-model="frmngaycong" class="mt-1 w-full form-input" type="date"/>
       </search-filter>
-      <loading-button :loading="chamcong.processing" class="btn-indigo" type="submit">Cập Nhật</loading-button>
+      <!-- <loading-button :loading="chamcong.processing" class="btn-indigo"  type="submit">Cập Nhật</loading-button> -->
     </div>
     <div class="bg-white rounded shadow overflow-x-auto">
       <table class="w-full whitespace-no-wrap">
@@ -35,7 +35,7 @@
             </inertia-link>
           </td>
           <td class="border-t text-center">
-              <div v-if="nv.nghiviec == false">
+              <div v-if="nv.nghiviec == false" >
                 <input v-model="chamcong.nhanvienIDList[nv.id - 1]" type="checkbox"/>
               </div>
               <div v-else>

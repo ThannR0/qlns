@@ -22,9 +22,9 @@
           <option value="danglamviec">Đang làm việc</option>
         </select>
       </search-filter>
-      <div>
-        <a href="javascript:void(0)" class="btn-indigo" @click="openModal"><span>Import</span></a>
-        <a :href="route('nhanvien.export')" class="btn-indigo" target="_blank"><span>Export</span></a>
+      <div class="flex flex-wrap justify-center gap-2 mt-2">
+        <!-- <a href="javascript:void(0)" class="btn-indigo" @click="openModal"><span>Import</span></a>
+        <a :href="route('nhanvien.export')" class="btn-indigo" target="_blank"><span>Export</span></a> -->
         <inertia-link class="btn-indigo" :href="route('nhanvien.create')">
           <span>Tạo Mới</span>
         </inertia-link>

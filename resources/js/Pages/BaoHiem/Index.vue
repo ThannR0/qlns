@@ -19,7 +19,7 @@
           <th class="px-6 pt-6 pb-4">Mã số</th>
           <th class="px-6 pt-6 pb-4">Ngày cấp</th>
           <th class="px-6 pt-6 pb-4">Ngày hết hạn</th>
-          <th class="px-6 pt-6 pb-4" colspan="2">Mức đóng</th>
+          <th class="px-6 pt-6 pb-4" colspan="2">Khấu trừ(%)</th>
         </tr>
         <tr v-for="bh in baohiem.data" :key="bh.id" class="hover:bg-gray-100 focus-within:bg-gray-100">
           <td class="border-t">

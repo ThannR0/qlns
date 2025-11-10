@@ -90,7 +90,7 @@
                 'thuong' => ['required', 'integer'],
                 'phat' => ['required', 'integer'],
                 'tamung' => ['required', 'integer'],
-                'thue'=>['required', 'integer'],
+                'thue'=>['required','regex:/^\d+(\.\d{1,2})?$/'],
                 'thuclinh' => ['required', 'integer'],
                 'ngaynhan' => ['required', 'date'],
             ]);
@@ -162,7 +162,7 @@
                 'thuong' => ['required', 'integer'],
                 'phat' => ['required', 'integer'],
                 'tamung' => ['required', 'integer'],
-                'thue' => ['required', 'integer'],
+                'thue' => ['required', 'regex:/^\d+(\.\d{1,2})?$/'],
                 'thuclinh' => ['required', 'integer'],
                 'ngaynhan' => ['required', 'date'],
             ]);

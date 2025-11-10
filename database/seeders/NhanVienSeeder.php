@@ -24,7 +24,7 @@ class NhanVienSeeder extends Seeder
                 'ngoaingu_id' => DB::table('ngoaingu')->inRandomOrder()->first()->id,
                 'dantoc_id' => DB::table('dantoc')->inRandomOrder()->first()->id,
                 'tongiao_id' => DB::table('tongiao')->inRandomOrder()->first()->id,
-                'hovaten' => 'Phan Đăng Khôi',
+                'hovaten' => 'Nguyễn Đức Thân',
                 'sdt' => '0849295535',
                 'gioitinh' => false
             ]),
@@ -40,7 +40,7 @@ class NhanVienSeeder extends Seeder
                 'ngoaingu_id' => DB::table('ngoaingu')->inRandomOrder()->first()->id,
                 'dantoc_id' => DB::table('dantoc')->inRandomOrder()->first()->id,
                 'tongiao_id' => DB::table('tongiao')->inRandomOrder()->first()->id,
-                'hovaten' => 'Nguyễn Đức Thân',
+                'hovaten' => 'Nguyen Quan Ly',
                 'sdt' => '0934343444',
                 'gioitinh' => false
             ]),
@@ -56,7 +56,7 @@ class NhanVienSeeder extends Seeder
                 'ngoaingu_id' => DB::table('ngoaingu')->inRandomOrder()->first()->id,
                 'dantoc_id' => DB::table('dantoc')->inRandomOrder()->first()->id,
                 'tongiao_id' => DB::table('tongiao')->inRandomOrder()->first()->id,
-                'hovaten' => 'Trần Thanh Nhật Thiên',
+                'hovaten' => 'Nguyen Nhan Vien',
                 'sdt' => '09343430156',
                 'gioitinh' => false
             ]),
@@ -64,19 +64,19 @@ class NhanVienSeeder extends Seeder
             'role' => 0
         ]);
 
-        // for($i=1; $i<=20; $i++)
-        // {
-        //     User::factory()->create([
-        //         'nhanvien_id' => NhanVien::factory()->create([
-        //             'phucap_id' => DB::table('phucap')->inRandomOrder()->first()->id,
-        //             'bangcap_id' => DB::table('bangcap')->inRandomOrder()->first()->id,
-        //             'chuyenmon_id' => DB::table('chuyenmon')->inRandomOrder()->first()->id,
-        //             'ngoaingu_id' => DB::table('ngoaingu')->inRandomOrder()->first()->id,
-        //             'dantoc_id' => DB::table('dantoc')->inRandomOrder()->first()->id,
-        //             'tongiao_id' => DB::table('tongiao')->inRandomOrder()->first()->id
-        //         ]),
-        //         'role' => 0
-        //     ]);
-        // }
+        for($i=1; $i<=20; $i++)
+        {
+            User::factory()->create([
+                'nhanvien_id' => NhanVien::factory()->create([
+                    'phucap_id' => DB::table('phucap')->inRandomOrder()->first()->id,
+                    'bangcap_id' => DB::table('bangcap')->inRandomOrder()->first()->id,
+                    'chuyenmon_id' => DB::table('chuyenmon')->inRandomOrder()->first()->id,
+                    'ngoaingu_id' => DB::table('ngoaingu')->inRandomOrder()->first()->id,
+                    'dantoc_id' => DB::table('dantoc')->inRandomOrder()->first()->id,
+                    'tongiao_id' => DB::table('tongiao')->inRandomOrder()->first()->id
+                ]),
+                'role' => 0
+            ]);
+        }
     }
 }

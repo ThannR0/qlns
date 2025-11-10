@@ -22,7 +22,7 @@
             <option :value="0">Không</option>
             <option :value="1">Có</option>
           </select-input>
-          <text-input v-model="form.mucdong" :error="form.errors.mucdong" class="pr-6 pb-8 w-full lg:w-1/1" label="Mức đóng" />
+          <text-input v-model="form.mucdong" :error="form.errors.mucdong" class="pr-6 pb-8 w-full lg:w-1/1" label="Khấu trừ(%)" />
         </div>
         <div class="px-8 py-4 bg-gray-50 border-t border-gray-100 flex justify-end items-center">
           <loading-button :loading="form.processing" class="btn-indigo" type="submit">Tạo Mới</loading-button>

@@ -16,7 +16,7 @@
           </select-input>
           <text-input v-model="form.lydo" :error="form.errors.lydo" class="pr-6 pb-8 w-full lg:w-1/2" label="Lý do" />
           <text-input v-model="form.sotien" :error="form.errors.sotien" class="pr-6 pb-8 w-full lg:w-1/2" type="number" label="Số tiền" />
-          <text-input v-model="form.ngayapdung" :error="form.errors.ngayapdung" class="pr-6 pb-8 w-full lg:w-1/2" type="month" label="Áp dụng cho tháng nào?" />
+          <text-input v-model="form.ngayapdung" :error="form.errors.ngayapdung" class="pr-6 pb-8 w-full lg:w-1/2" type="month" label="Áp dụng cho tháng:" />
         </div>
         <div class="px-8 py-4 bg-gray-50 border-t border-gray-100 flex justify-end items-center">
           <loading-button :loading="form.processing" class="btn-indigo" type="submit">Tạo Mới</loading-button>

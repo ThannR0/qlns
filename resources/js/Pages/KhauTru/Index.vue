@@ -17,7 +17,7 @@
           <th class="px-6 pt-6 pb-4">Mã nhân viên</th>
           <th class="px-6 pt-6 pb-4">Họ và tên</th>
           <th class="px-6 pt-6 pb-4">Loại Bảo Hiểm</th>
-          <th class="px-6 pt-6 pb-4">Mức đóng</th>
+          <th class="px-6 pt-6 pb-4">Khấu trừ(%)</th>
           <th class="px-6 pt-6 pb-4" colspan="2">Tháng đóng</th>
         </tr>
         <tr v-for="ul in khautru.data" :key="ul.id" class="hover:bg-gray-100 focus-within:bg-gray-100">

@@ -19,8 +19,8 @@
             <option :value="1">Thưởng</option>
           </select-input>
           <text-input v-model="form.lydo" :error="form.errors.lydo" class="pr-6 pb-8 w-full lg:w-1/2" label="Lý do" />
-          <text-input v-model="form.sotien" :error="form.errors.sotien" class="pr-6 pb-8 w-full lg:w-1/2" type="number" label="Số tiền" />
-          <text-input v-model="form.ngayapdung" :error="form.errors.ngayapdung" class="pr-6 pb-8 w-full lg:w-1/2" type="month" label="Áp dụng cho tháng nào?" />
+          <text-input v-model="form.sotien" :error="form.errors.sotien" class="pr-6 pb-8 w-full lg:w-1/2" type="number" label="Số tiền:" />
+          <text-input v-model="form.ngayapdung" :error="form.errors.ngayapdung" class="pr-6 pb-8 w-full lg:w-1/2" type="month" label="Áp dụng cho tháng:" />
         </div>
         <div class="px-8 py-4 bg-gray-50 border-t border-gray-100 flex items-center">
           <button v-if="!thuongphat.deleted_at && $page.props.auth.user.role == 2" class="text-red-600 hover:underline" tabindex="-1" type="button" @click="destroy">Xoá Thưởng Phạt</button>

@@ -21,7 +21,7 @@
             <option :value="null">- Chọn -</option>
             <option v-for="cv in chucvu" :key="cv.id" :value="cv.id">{{ cv.tencv }}</option>
           </select-input>
-          <text-input v-model="form.hsphucap" :error="form.errors.hsphucap" class="pr-6 pb-8 w-full lg:w-1/1" label="Hệ số phụ cấp" />
+          <text-input v-model="form.hsphucap" :error="form.errors.hsphucap" class="pr-6 pb-8 w-full lg:w-1/1" label="Hệ số phụ cấp(%)" />
         </div>
         <div class="px-8 py-4 bg-gray-50 border-t border-gray-100 flex items-center">
           <button v-if="!phucap.deleted_at && $page.props.auth.user.role == 2" class="text-red-600 hover:underline" tabindex="-1" type="button" @click="destroy">Xoá Phụ Cấp</button>

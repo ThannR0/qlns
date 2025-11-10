@@ -19,7 +19,7 @@
         <tr class="text-left font-bold">
           <th class="px-6 pt-6 pb-4">Tên phòng ban</th>
           <th class="px-6 pt-6 pb-4">Tên chức vụ</th>
-          <th class="px-6 pt-6 pb-4" colspan="2">Hệ số phụ cấp</th>
+          <th class="px-6 pt-6 pb-4" colspan="2">Hệ số phụ cấp(%)</th>
         </tr>
         <tr v-for="pc in phucap.data" :key="pc.id" class="hover:bg-gray-100 focus-within:bg-gray-100">
           <td class="border-t">

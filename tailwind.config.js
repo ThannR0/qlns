@@ -23,24 +23,26 @@ module.exports = {
       indigo: {
         100: '#e6e8ff',
         300: '#b2b7ff',
-        400: '#7886d7',
-        500: '#6574cd',
-        600: '#5661b3',
-        800: '#2f365f',
+        400: '#38eba6',
+        500: '#2C3E8C',
+        600: '#274147ff',
+        800: '#1b2458ff',
         900: '#191e38',
       },
     },
+
+
     extend: {
-      borderColor: theme => ({
+      borderColor: (theme) => ({
         DEFAULT: theme('colors.gray.200', 'currentColor'),
       }),
       fontFamily: {
         sans: ['Cerebri Sans', ...defaultTheme.fontFamily.sans],
       },
-      boxShadow: theme => ({
+      boxShadow: (theme) => ({
         outline: '0 0 0 2px ' + theme('colors.indigo.500'),
       }),
-      fill: theme => theme('colors'),
+      fill: (theme) => theme('colors'),
     },
   },
   variants: {

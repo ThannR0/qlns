@@ -121,8 +121,8 @@ Route::get('nhanvien/export', [NhanVienController::class, 'export'])
     ->middleware('auth');
 
 // Images
-
-Route::get('/img/{path}', [ImagesController::class, 'show'])
+//'/img/{path}'
+Route::get('/storage/{path}', [ImagesController::class, 'show'])
     ->where('path', '.*')
     ->name('image');
 
@@ -425,7 +425,7 @@ Route::put('tongiao/{tongiao}/restore', [TonGiaoController::class, 'restore'])
     ->name('tongiao.restore')
     ->middleware('auth');
 
-// MucLuong
+// phucap
 
 Route::get('phucap', [PhuCapController::class, 'index'])
     ->name('phucap')
@@ -601,7 +601,7 @@ Route::put('nghiviec/{nghiviec}/restore', [NghiViecController::class, 'restore']
     ->name('nghiviec.restore')
     ->middleware('auth');
 
-// NghiViec
+// ThuongPhat
 Route::get('thuongphat', [ThuongPhatController::class, 'index'])
     ->name('thuongphat')
     ->middleware('auth');
@@ -646,3 +646,6 @@ Route::get('bangchamcong', [BangChamCongController::class, 'index'])
     ->name('bangchamcong')
     ->middleware('auth');
 
+// Route::put('bangchamcong', [BangChamCongController::class, 'update'])
+//     ->name('bangchamcong.update')
+//     ->middleware('auth');
