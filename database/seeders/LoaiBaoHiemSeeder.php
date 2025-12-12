@@ -29,5 +29,9 @@ class LoaiBaoHiemSeeder extends Seeder
         LoaiBaoHiem::factory()->create([
             'tenbh' => 'Bảo Hiểm Thất Nghiệp'
         ]);
+
+        LoaiBaoHiem::factory()->create([
+            'tenbh' => 'Bảo Hiểm Thân Thể'
+        ]);
     }
 }

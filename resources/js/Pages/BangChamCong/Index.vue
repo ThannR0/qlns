@@ -1,13 +1,13 @@
 <template>
   <div>
-    <h1 class="mb-8 font-bold text-3xl">Bảng Nhân Viên Đã Chấm Công</h1>
+    <h1 class="mb-8 font-bold text-3xl">Bảng Nhân Viên Đã Chấm Công Hôm Nay</h1>
     <form @submit.prevent="update">
     <div class="mb-6 flex justify-between items-center">
       <search-filter v-model="form.search" class="w-full max-w-md mr-4" @reset="reset">
         <label class="block text-gray-700">Ngày công:</label>
         <input @change="change" v-model="frmngaycong" class="mt-1 w-full form-input" type="date"/>
       </search-filter>
-      <!-- <loading-button :loading="chamcong.processing" class="btn-indigo"  type="submit">Cập Nhật</loading-button> -->
+      <loading-button :loading="chamcong.processing" class="btn-indigo"  type="submit">Cập Nhật</loading-button>
     </div>
     <div class="bg-white rounded shadow overflow-x-auto">
       <table class="w-full whitespace-no-wrap">
@@ -49,7 +49,7 @@
           </td>
         </tr>
         <tr v-if="nhanvien.data.length === 0">
-          <td class="border-t px-6 py-4" colspan="5">Không có nhân viên nào cả.</td>
+          <td class="border-t px-6 py-4" colspan="5">Không tìm thấy nhân viên nào cả.</td>
         </tr>
       </table>
     </div>
@@ -111,7 +111,7 @@ export default {
       this.form = mapValues(this.form, () => null)
     },
     update() {
-        this.chamcong.post(this.route('bangchamcong'))
+        this.chamcong.post(this.route('bangchamcong.store'))
     },
     change() {
         window.location.href = "?ngaycong=" + this.frmngaycong;

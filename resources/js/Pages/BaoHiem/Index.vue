@@ -60,7 +60,7 @@
           </td>
         </tr>
         <tr v-if="baohiem.data.length === 0">
-          <td class="border-t px-6 py-4" colspan="6">Không có bảo hiểm nào cả.</td>
+          <td class="border-t px-6 py-4" colspan="6">Không tìm thấy bảo hiểm nào cả.</td>
         </tr>
       </table>
     </div>

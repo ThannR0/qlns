@@ -40,6 +40,11 @@ class PhuCapSeeder extends Seeder
             'tenpb' => 'Phòng Hành Chính'
         ]);
 
+        $ai = PhongBan::factory()->create([
+            'tenpb' => 'Phòng AI'
+        ]);
+
+
         $truongphong = ChucVu::factory()->create([
             'tencv' => 'Trưởng Phòng'
         ]);
@@ -50,7 +55,7 @@ class PhuCapSeeder extends Seeder
         ]);
 
         $marketing = ChucVu::factory()->create([
-            'tencv' => 'Marketing'
+            'tencv' => 'Marketing '
         ]);
 
         $nhanvien = ChucVu::factory()->create([
@@ -161,6 +166,24 @@ class PhuCapSeeder extends Seeder
 
         PhuCap::factory()->create([
             'phongban_id' => $hanhchinh,
+            'chucvu_id' => $nhanvien,
+            'hsphucap' => 1.00
+        ]);
+
+        PhuCap::factory()->create([
+            'phongban_id' => $ai,
+            'chucvu_id' => $truongphong,
+            'hsphucap' => 1.50
+        ]);
+
+        PhuCap::factory()->create([
+            'phongban_id' => $ai,
+            'chucvu_id' => $phophong,
+            'hsphucap' => 1.20
+        ]);
+
+        PhuCap::factory()->create([
+            'phongban_id' => $ai,
             'chucvu_id' => $nhanvien,
             'hsphucap' => 1.00
         ]);

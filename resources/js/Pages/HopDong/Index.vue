@@ -54,7 +54,7 @@
           </td>
         </tr>
         <tr v-if="hopdong.data.length === 0">
-          <td class="border-t px-6 py-4" colspan="6">Không có hợp đồng nào cả.</td>
+          <td class="border-t px-6 py-4" colspan="6">Không tìm thấy hợp đồng nào cả.</td>
         </tr>
       </table>
     </div>

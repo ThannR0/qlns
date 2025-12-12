@@ -22,10 +22,13 @@ class KhauTruController extends Controller
                 ->filter(Request::only('search', 'trashed'))
                 ->paginate(10)
                 ->withQueryString()
-                ->through(fn ($khautru) => [
+                ->through(fn($khautru) => [
                     'id' => $khautru->id,
-                    'manv' => 'NV' . str_pad($khautru->nhanvien->id, 3, '0', STR_PAD_LEFT),
-                    'hovaten' => $khautru->nhanvien->hovaten,
+                    'manv' => optional($khautru->nhanvien)->id
+                        ? 'NV' . str_pad(optional($khautru->nhanvien)->id, 3, '0', STR_PAD_LEFT)
+                        : null,
+
+                    'hovaten' => $khautru->nhanvien->hovaten ?? "",
                     'loaibaohiem' => $khautru->loaibaohiem->tenbh,
                     'mucdong' => $khautru->mucdong,
                     'ngaydong' => str_pad($khautru->thang, 2, '0', STR_PAD_LEFT) . '-' . $khautru->nam,

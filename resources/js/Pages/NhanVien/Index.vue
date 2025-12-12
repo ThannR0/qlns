@@ -23,13 +23,13 @@
         </select>
       </search-filter>
       <div class="flex flex-wrap justify-center gap-2 mt-2">
-        <!-- <a href="javascript:void(0)" class="btn-indigo" @click="openModal"><span>Import</span></a>
-        <a :href="route('nhanvien.export')" class="btn-indigo" target="_blank"><span>Export</span></a> -->
+        <a href="javascript:void(0)" class="btn-indigo" @click="openModal"><span>Import Excel</span></a>
+        <a :href="route('nhanvien.export')" class="btn-indigo" target="_blank"><span>Export Excel</span></a>
         <inertia-link class="btn-indigo" :href="route('nhanvien.create')">
           <span>Tạo Mới</span>
         </inertia-link>
       </div>
-    </div>
+    </div> 
     <div class="bg-white rounded shadow overflow-x-auto">
       <table class="w-full whitespace-no-wrap">
         <tr class="text-left font-bold">
@@ -80,7 +80,7 @@
           </td>
         </tr>
         <tr v-if="nhanvien.data.length === 0">
-          <td class="border-t px-6 py-4" colspan="5">Không có nhân viên nào cả.</td>
+          <td class="border-t px-6 py-4" colspan="5">Không tìm thấy nhân viên nào cả.</td>
         </tr>
       </table>
     </div>
